@@ -19,7 +19,7 @@
 			  </div>
 			  <div class="form-group">
 			    <label for="field2">Header Image</label>
-			    <input type="text" name="header_mage" class="form-control" id="field2" placeholder="Path to File">
+			    <input type="text" name="headerImage" class="form-control" id="field2" placeholder="Path to File">
 			  </div>
 			   <div class="form-group">
 			    <label for="field3">Header Text</label>
