@@ -1,5 +1,14 @@
 <?php
 	include 'includes/db_connect.php';
+	$query = 'SELECT * FROM promos';
+	$result = mysql_query($query);
+	while($row = mysql_fetch_assoc($result)){
+		$promoArray[] = $row;
+	}
+	print "<pre>";
+	print_r ($promoArray);
+	print "</pre>";
+	exit;
 	?>
 
 <!DOCTYPE html>

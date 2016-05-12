@@ -1,5 +1,9 @@
 <?php
 	include 'includes/db_connect.php';
+	$updated = $_GET['updated'];
+	if($updated == 'true'){
+		$message = 'Your promo has been added to the database';
+	}
 ?>
 
 <!DOCTYPE html>
@@ -12,6 +16,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="adminWrapper col-sm-6 col-sm-offset-3">
+				<div class="success msg"><?php print $message;?></div>
 				<form action="admin_process.php" method="post">
 			  <div class="form-group">
 			    <label for="field1">Promotion Title</label>

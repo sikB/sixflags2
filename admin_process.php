@@ -1,6 +1,26 @@
 <?php
 	include 'includes/db_connect.php';
 
+	$dbColumns = '';
+	$values = '';
+	foreach($_POST as $key=>$value){
+		$dbColumns .= $key.",";
+		$values .= "'".$value."',";
+	}
+	$trimmedValues = rtrim($values, ",");
+	$trimmeddbColumns = rtrim($dbColumns, ",");
+
+$query = 'INSERT INTO promos 
+('.$trimmeddbColumns.')
+values
+('.$trimmedValues.')';
+
+	$result = mysql_query($query);
+	header('Location: admin.php?updated=true');
+	?>
+
+<!-- *('.$title.','.$headerImage.','.$headerText.','.$bodyText.','.$lowerImage.','.$lowerHeader.','.$lowerBodyText.','.$lowerImage2.','.$lowerHeader2.','.$lowerBodyText2.')';*/ -->
+<!-- 
 	// print_r ($_POST);
 
 // print $_POST['title'];
@@ -14,26 +34,16 @@
 // print $_POST['lowerHeader2'];
 // print $_POST['lowerBodyText2'];
 
-$title = "'".$_POST['title']."'";
-$headerImage = "'".$_POST['headerImage']."'";
-$headerText = "'".$_POST['headerText']."'";
-$bodyText = "'".$_POST['bodyText']."'";
-$lowerImage = "'".$_POST['lowerImage']."'";
-$lowerHeader = "'".$_POST['lowerHeader']."'";
-$lowerBodyText = "'".$_POST['lowerBodyText']."'";
-$lowerImage2 = "'".$_POST['lowerImage2']."'";
-$lowerHeader2 = "'".$_POST['lowerHeader2']."'";
-$lowerBodyText2 = "'".$_POST['lowerBodyText2']."'";
-
-$query = 'INSERT INTO promos 
-(title, headerImage, headerText, bodyText, lowerImage, lowerHeader, lowerBodyText, lowerImage2, lowerHeader2, lowerBodyText2) 
-values
-('.$title.','.$headerImage.','.$headerText.','.$bodyText.','.$lowerImage.','.$lowerHeader.','.$lowerBodyText.','.$lowerImage2.','.$lowerHeader2.','.$lowerBodyText2.')';
-
-
-	$result = mysql_query($query);
-	print mysql_error();
-	print "<br />";
-	print "Finished";
-	?>
-
+// $_POST['title']."'";
+// $_POST['headerImage']."'";
+// $_POST['headerText']."'";
+// $_POST['bodyText']."'";
+// $_POST['lowerImage']."'";
+// $_POST['lowerHeader']."'";
+// $_POST['lowerBodyText']."'";
+// $_POST['lowerImage2']."'";
+// $_POST['lowerHeader2']."'";
+// $_POST['lowerBodyText2']."'";
+ -->
+ <!-- 
+(title, headerImage, headerText, bodyText, lowerImage, lowerHeader, lowerBodyText, lowerImage2, lowerHeader2, lowerBodyText2)  -->
