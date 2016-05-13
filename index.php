@@ -5,10 +5,10 @@
 	while($row = mysql_fetch_assoc($result)){
 		$promoArray[] = $row;
 	}
-	print "<pre>";
-	print_r ($promoArray);
-	print "</pre>";
-	exit;
+	// print "<pre>";
+	// print_r ($promoArray);
+	// print "</pre>";
+	// exit;
 	?>
 
 <!DOCTYPE html>
@@ -71,11 +71,7 @@
 		<div id="promotions">
 		<?php
 			foreach($promo_array as $promo):?>
-			
 			<!-- <h1><?php //print $promo['text_header'];?></h1> -->
-
-			
-
 			<div class="promo">
 				<div class="promo-title">
 					<?php print $promo["title"]; ?>
