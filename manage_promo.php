@@ -30,7 +30,7 @@
 					<div class="adminEdit">
 						<h3><?php print $promo["title"]; ?></h3>
 						<a href="edit_promo.php?id=<?php print $promo['id'];?>"><button class="btn btn-primary">Edit</button>
-						<a href=""><button class="btn btn-danger">Delete</button>
+						<a href="admin_process.php?task=delete&id=<?php print $promo['id'];?>"><button class="btn btn-danger">Delete</button>
 					</div>
 					<?php endforeach; ?>
 					<!-- <div class="adminEdit">

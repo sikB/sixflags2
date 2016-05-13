@@ -17,7 +17,7 @@
 		<div class="row">
 			<div class="adminWrapper col-sm-6 col-sm-offset-3">
 				<div class="success msg"><?php print $message;?></div>
-				<form action="admin_process.php" method="post">
+				<form action="admin_process.php?task=insert" method="post">
 			  <div class="form-group">
 			    <label for="field1">Promotion Title</label>
 			    <input type="text" name='title' class="form-control" id="field1" placeholder="Promotion">

@@ -2,7 +2,7 @@
 	$link = mysql_connect('127.0.0.1', 'x', 'x');
 	if(!$link){
 		print 'not connected: ' . mysql_error();
-		exit;
+		
 	}
 	$db_selected = mysql_select_db('sixflags2', $link);
 	if(!$db_selected){

@@ -6,12 +6,13 @@
 	$what_to_update = '';
 	foreach($_POST as $key=>$value){
 		$what_to_update .= $key. "='". $value."',";
-		$dbColumns .= $key.",";
-		$values .= "'".$value."',";
 	}
 	$trimmedUpdate = rtrim($what_to_update, ",");
-	}
-
+	$query = 'UPDATE promos 
+	SET '. $trimmedUpdate. 'WHERE id = '.$_POST['id'];
+	$updateResult = mysql_query($query);
+	header('Location: admin.php?updated=true');
+}else if($_GET['task'] == 'insert'){
 	$dbColumns = '';
 	$values = '';
 	foreach($_POST as $key=>$value){
@@ -28,6 +29,13 @@ values
 
 	$result = mysql_query($query);
 	header('Location: admin.php?updated=true');
+}else if($_GET['task'] == 'delete'){
+	$query = 'DELETE FROM promos WHERE id = '.$_GET['id'];
+	$delete = mysql_query($query);
+	header('Location: admin.php?deleted=true');
+}
+
+	
 	?>
 
 <!-- *('.$title.','.$headerImage.','.$headerText.','.$bodyText.','.$lowerImage.','.$lowerHeader.','.$lowerBodyText.','.$lowerImage2.','.$lowerHeader2.','.$lowerBodyText2.')';*/ -->
