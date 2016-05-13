@@ -1,6 +1,17 @@
 <?php
 	include 'includes/db_connect.php';
 
+	if($_GET['task'] == 'update'){
+
+	$what_to_update = '';
+	foreach($_POST as $key=>$value){
+		$what_to_update .= $key. "='". $value."',";
+		$dbColumns .= $key.",";
+		$values .= "'".$value."',";
+	}
+	$trimmedUpdate = rtrim($what_to_update, ",");
+	}
+
 	$dbColumns = '';
 	$values = '';
 	foreach($_POST as $key=>$value){

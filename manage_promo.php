@@ -29,10 +29,11 @@
 
 					<div class="adminEdit">
 						<h3><?php print $promo["title"]; ?></h3>
-						<button class="btn btn-primary">Edit</button>
-						<button class="btn btn-danger">Delete</button>
+						<a href="edit_promo.php?id=<?php print $promo['id'];?>"><button class="btn btn-primary">Edit</button>
+						<a href=""><button class="btn btn-danger">Delete</button>
 					</div>
-					<div class="adminEdit">
+					<?php endforeach; ?>
+					<!-- <div class="adminEdit">
 						<h3><?php print $promo["headerImage"]; ?></h3>
 						<button class="btn btn-primary">Edit</button>
 						<button class="btn btn-danger">Delete</button>
@@ -77,7 +78,7 @@
 						<button class="btn btn-primary">Edit</button>
 						<button class="btn btn-danger">Delete</button>
 					</div>
-				<?php endforeach; ?>
+ -->				
 				</div>
 		</div>
 	</div>
